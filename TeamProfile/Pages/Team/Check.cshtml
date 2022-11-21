@@ -1,0 +1,93 @@
+﻿@page
+@using Kendo.Mvc.UI;
+@using TeamProfile.Models;
+@addTagHelper *, Kendo.Mvc
+@model TeamProfile.Pages.Team.check.CheckModel
+
+@{
+    ViewData["Title"] = "Check";
+
+}
+
+<h1>Search</h1>
+
+<h4>teams</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div>
+                <label for="Searchname">Search</label>
+                <input type="text" asp-for="@Model.seaecrvalue" value="" />
+          </div>
+            <br>
+            <div>
+               <button type="submit" asp-page-handler="Searchb" class="btn btn-outline-info" id="btnSer">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.teams[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.teams[0].JoinDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.teams[0].Position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.teams[0].University)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.teams[0].Mobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.teams[0].Portfolio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.teams)
+    {
+        <tr>
+                <td>
+                @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.JoinDate)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Position)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.University)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Mobile)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Portfolio)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+    }
+    </tbody>
+    
+</table>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

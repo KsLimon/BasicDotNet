@@ -1,0 +1,60 @@
+﻿@page
+@model TeamProfile.Pages.Team.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>teams</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="teams.Id" />
+            <div class="form-group">
+                <label asp-for="teams.Name" class="control-label"></label>
+                <input asp-for="teams.Name" class="form-control" />
+                <span asp-validation-for="teams.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="teams.JoinDate" class="control-label"></label>
+                <input asp-for="teams.JoinDate" class="form-control" />
+                <span asp-validation-for="teams.JoinDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="teams.Position" class="control-label"></label>
+                <input asp-for="teams.Position" class="form-control" />
+                <span asp-validation-for="teams.Position" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="teams.University" class="control-label"></label>
+                <input asp-for="teams.University" class="form-control" />
+                <span asp-validation-for="teams.University" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="teams.Mobile" class="control-label"></label>
+                <input asp-for="teams.Mobile" class="form-control" />
+                <span asp-validation-for="teams.Mobile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="teams.Portfolio" class="control-label"></label>
+                <input asp-for="teams.Portfolio" class="form-control" />
+                <span asp-validation-for="teams.Portfolio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
