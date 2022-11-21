@@ -1,0 +1,68 @@
+﻿@page
+@using Kendo.Mvc.UI;
+@model TeamProfile.Pages.Team.adds.add2teamModel
+
+@{
+    ViewData["Title"] = "add2team";
+}
+
+<div class="col-md-4">
+<form class="form-horizontal" method="post">
+    <h4>Add New Member</h4>
+    <br>
+        <h4>Name:</h4>
+    @Html.Kendo().TextBoxFor(model => model.teams.Name)
+        <br>
+        <h4>Position:</h4>
+    @Html.Kendo().TextBoxFor(model => model.teams.Position)
+        <br>
+        <h4>University:</h4>
+    @Html.Kendo().TextBoxFor(model => model.teams.University)
+        <br>
+        <h4>Mobile:</h4>
+    @Html.Kendo().TextBoxFor(model => model.teams.Mobile)
+        <br>
+        <h4>Portfolio:</h4>
+    @Html.Kendo().TextBoxFor(model => model.teams.Portfolio)
+        <br>
+        <h4>JoinDate:</h4>
+    @Html.Kendo().DatePickerFor(model => model.teams.JoinDate)
+        <br>
+        <br>
+    <div class="form-group">
+        <div>
+            <button type="submit" class="button">Submit</button>
+        </div>
+    </div>
+</form>
+</div>
+
+<style>
+    .button {
+        display: inline-block;
+        padding: 7px 15px;
+        font-size: 12px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 7px;
+        box-shadow: 0 10px #999;
+    }
+
+        .button:hover {
+            background-color: #3e8e41
+        }
+
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 3px #666;
+            transform: translateY(4px);
+        }
+</style>
+
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

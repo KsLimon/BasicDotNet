@@ -1,0 +1,14 @@
+﻿@page
+@using Kendo.Mvc.UI;
+@using TeamProfile.Models
+@model TeamProfile.Pages.Team.telerikModel
+@{
+}
+
+
+<div class="k-d-flex k-justify-content-center" style="padding-top: 54px;">
+    <div class="k-w-300">
+        @(Html.Kendo().TextBoxFor(model => model.name)
+        )
+    </div>
+</div>

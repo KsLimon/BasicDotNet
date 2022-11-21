@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/TeamProfile.styles.css" asp-append-version="true" />
+	<link href="https://cdn.kendostatic.com/2022.3.1109/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://cdn.kendostatic.com/2022.3.1109/styles/kendo.default.min.css" rel="stylesheet" type="text/css" />
+	<script src="https://cdn.kendostatic.com/2022.3.1109/js/jquery.min.js"></script>
+	<script src="https://cdn.kendostatic.com/2022.3.1109/js/jszip.min.js"></script>
+	<script src="https://cdn.kendostatic.com/2022.3.1109/js/kendo.all.min.js"></script>
+	<script src="https://cdn.kendostatic.com/2022.3.1109/js/kendo.aspnetmvc.min.js"></script>
 </head>
 <body>
     <header>
@@ -26,7 +32,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Team/Index">Team</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Team/Check"><button class="button"> Search </button></a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Team/add2team">Add2Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Team/Search"> Search </a>
                         </li>
                     </ul>
                 </div>
@@ -46,7 +55,6 @@
         </div>
     </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
