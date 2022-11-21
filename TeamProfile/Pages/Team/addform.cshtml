@@ -1,0 +1,53 @@
+﻿@page
+@using Kendo.Mvc.UI;
+@using TeamProfile.Models
+@model TeamProfile.Pages.Team.addformModel
+@{
+}
+<div id="example" class="col-md-4">
+    <div class="demo-section">
+        <div id="validation-success"></div>
+
+        <form id="exampleform"></form>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            var validationSuccess = $("#validation-success");
+
+            $("#exampleform").kendoForm({
+                orientation: "vertical",
+                formData: {
+                    Name: "",
+                    Position: "",
+                    University: "",
+                    Mobile: "",
+                    Portfolio: "",
+                    JoinDate: new Date(),
+                },
+                items: [{
+                    type: "group",
+                    label: "Add Member",
+                    items: [
+                        { field: "Name", label: "Name:", validation: { required: true } },
+                        { field: "Position", label: "Position:", validation: { required: true } },
+                        { field: "University", label: "University:", validation: { required: true } },
+                        { field: "Mobile", label: "Mobile:", validation: { required: true } },
+                        { field: "Portfolio", label: "Portfolio:", validation: { required: true } },
+                        { field: "JoinDate", label: { text: "Date of Join:", optional: true } },
+                    ]
+                }],
+                validateField: function (e) {
+                    validationSuccess.html("");
+                },
+                submit: function (e) {
+                    e.preventDefault();
+                    validationSuccess.html("<div class='k-messagebox k-messagebox-success'>Form data is valid!</div>");
+                },
+                clear: function (ev) {
+                    validationSuccess.html("");
+                }
+            });
+        });
+    </script>
+</div>
